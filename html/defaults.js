@@ -29,8 +29,8 @@ let DisplayUnits = "nautical";
 // degrees.
 
 // Default center of the map.
-let DefaultCenterLat = 40.56;
-let DefaultCenterLon = -73.66
+let DefaultCenterLat = 20.85;
+let DefaultCenterLon = 106.64
 // The google maps zoom level, 0 - 16, lower is further out
 let DefaultZoomLvl   = 9;
 
@@ -44,7 +44,7 @@ let showGrid = false;
 let SiteShow    = true;           // true to show a center marker
 let SiteLat     = null;            // position of the marker
 let SiteLon     = null;
-let SiteName    = "My Radar Site"; // tooltip of the marker
+let SiteName    = "sky.hpradar.com"; // tooltip of the marker
 
 // Update GPS location (keep map centered on GPS location)
 let updateLocation = false;
@@ -52,13 +52,13 @@ let updateLocation = false;
 // Color controls for the range outline
 let range_outline_color = '#0000DD';
 let range_outline_alpha = 1.0;
-let range_outline_width = 1.7;
+let range_outline_width = 0.85;
 let range_outline_colored_by_altitude = false;
 let range_outline_dash = null; // null - solid line, [5, 5] - dashed line with 5 pixel lines and spaces in between
 
 // Style controls for the actal range outline:
 let actual_range_outline_color = '#00596b';
-let actual_range_outline_width = 1.7;
+let actual_range_outline_width = 0.9;
 let actual_range_outline_dash = null; // null - solid line, [5, 5] - dashed line with 5 pixel lines and spaces in between
 //
 let actual_range_show = true;
