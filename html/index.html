@@ -1,6 +1,16 @@
-﻿<!DOCTYPE HTML>
+
+<!DOCTYPE HTML>
 <html>
   <head>
+	  <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHW8WJNXDD"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-ZHW8WJNXDD');
+	</script>
     <meta name="description" content="tar1090 - ADS-B plane tracking interface">
 
     <meta charset="utf-8"/>
@@ -733,8 +743,6 @@
             <progress id="loader_progress"></progress>
           </div>
         </div>
-        <div id="iconTestCanvas" style="background-color:#D2D2D2;display:none;">
-        </div>
 
         <div id="settings_infoblock">
           <div id="settings_close" class="settingsCloseBox"></div>
@@ -849,24 +857,24 @@
                 </td>
               </tr>
 
-              <tr id='adsbexchange_header' class="infoblock_row hidden">
+              <tr id='hpradar_header' class="infoblock_row ">
                 <td style="text-align: center">
                   <div>
-                    <span class="largeText">Improve Coverage:<br><a class="largeText" target="_blank" href="https://adsbexchange.com/how-to-feed/">adsbexchange.com</a></span>
+                    <span class="largeText">HPRadar.com<br><a class="smallText" target="_blank" href="https://hpradar.com/"></a></span>
                   </div>
                   <div class="rSpacer"></div>
                   <div class="rSpacer"></div>
                   <div>
-                    <span class="largeText">
-                      <a id="premium_text" class="largeText" href="https://store.adsbexchange.com/pages/subscription">Premium Login: no ads / Sat. Layer</a>
-                    </span>
+                    <!-- <span class="largeText"> -->
+                      <!-- <a id="premium_text" class="largeText" href="https://store.adsbexchange.com/pages/subscription">Premium Login: no ads / Sat. Layer</a> -->
+                    <!-- </span> -->
                   </div>
                   <div class="rSpacer"></div>
                   <div>
                     <span class="largeText">
-                      <a class="largeText" target="_blank" href="https://adsbexchange.com/faq/">FAQ</a>
+                      <a class="smallText" target="_blank" href="https://hpradar.com/">Home</a>
                       &emsp;&emsp;
-                      <a class="largeText" target="_blank" href="https://adsbexchange.com/map-help/">Map Help</a>
+                      <a class="smallText" target="_blank" href="https://sky.hpradar.com">ADSB Map</a>
                     </span>
                   </div>
                   <div class="rSpacer">
@@ -882,8 +890,12 @@
               </tr>
 
               <tr class="infoblock_heading">
+			  
+			  
+			  
+			  
                 <td style="text-align: right" class=link>
-                  <a href="https://github.com/wiedehopf/tar1090#tar1090" id="dump1090_version" target="_blank">tar1090 on github</a>
+                  <a href="https://github.com/wiedehopf/tar1090#tar1090" id="dump1090_version" target="_blank">tar1090 on github (230812)</a>
                 </td>
               </tr>
               <tr class="rSpacer">
@@ -1038,7 +1050,7 @@
     <div id="js_error" class="hidden"></div>
     <div id="container_splitter"></div>
 
-    <script>let databaseFolder = "db2";</script>
+    <script>let databaseFolder = "db-c1866b3";</script>
     <!-- JS_ANCHOR1 -->
     <script src="libs/jquery-3.6.1.min.js"></script>
     <script src="libs/elm-pep-01.js"></script>
@@ -1048,23 +1060,23 @@
     <script src="libs/ol-custom022.js"></script>
 
     <!-- JS_ANCHOR2 -->
-    <script src="early.js"></script>
+    <script src="early_381b865a4574f8d08745ad1b5680fe12.js"></script>
 
-    <script src="defaults.js"></script>
+    <script src="defaults_1d446b1639e668f81140b79b04358fb7.js"></script>
     <script src="config.js"></script>
-    <script src="dbloader.js"></script>
-    <script src="registrations.js"></script>
-    <script src="formatter.js"></script>
-    <script src="flags.js"></script>
-    <script src="layers.js"></script>
+    <script src="dbloader_ab2f2b5a4c7676187e06f19e03a89d0e.js"></script>
+    <script src="registrations_11eeb2a2bc6f857c00cc650f716f0dce.js"></script>
+    <script src="formatter_d8628333543e9053ac555a8d100344ce.js"></script>
+    <script src="flags_85c027dc65e88e1a6a1df10612b195ee.js"></script>
+    <script src="layers_c5c7df622c9a7a3bc5b22c2c7d19e3fb.js"></script>
     <script src="geomag2020.js"></script>
-    <script src="markers.js"></script>
+    <script src="markers_454edac148a3df253bfa6a4c09f820ce.js"></script>
 
     <!-- JS_ANCHOR3 -->
-    <script src="planeObject.js"></script>
-    <script src="script.js"></script>
+    <script src="planeObject_7a3781c103611beb4b58de62a59927b1.js"></script>
+    <script src="script_8865a3a5481ba6b48b715ab3047c205a.js"></script>
 
-    <link rel="preload" as="image" crossOrigin="anonymous" href="images/sprites.png">
+    <link rel="preload" as="image" crossOrigin="anonymous" href="images/sprites_1f27e6d32849ec1dc3c8429a1755c451.png">
 
   </body>
 </html>

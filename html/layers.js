@@ -21,6 +21,7 @@ function createBaseLayers() {
     let world = new ol.Collection();
     let us = new ol.Collection();
     let europe = new ol.Collection();
+	let my_map = new ol.Collection();
 
     const tileTransition = onMobile ? 0 : 150;
 
@@ -101,7 +102,7 @@ function createBaseLayers() {
         type: 'base',
     }));
 
-    if (!adsbexchange) {
+    if (1) {
         world.push(new ol.layer.Tile({
             source: new ol.source.OSM({
                 "url" : "https://{a-d}.tile.openstreetmap.de/{z}/{x}/{y}.png",
@@ -115,8 +116,33 @@ function createBaseLayers() {
         }));
     }
 
-    if (false && adsbexchange) {
+    if (1) {
         jQuery('#premium_text').updateText('Premium active!');
+	    world.push(new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=nRYox0R1ZyZ6XqSStq4S',
+                attributions: 'Map tiles by <a href="https://www.maptiler.com/">MapTiler</a>',
+                attributionsCollapsible: true,
+                maxZoom: 28,
+                transition: tileTransition,
+            }),
+            name: 'MapTiler_streets',
+            title: 'MapTiler Streets',
+            type: 'base',
+        }));
+		
+        world.push(new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://tile.jawg.io/jawg-streets/{z}/{x}/{y}.png?access-token=qML7E6HmMKb6LQJgxHedkuht58y48dIpzawFGfCXdHzqnZWQlscx5zmyw7uYgTZG',
+                attributions: 'Map tiles by <a href="https://www.jawg.io/">Jawg Maps</a>',
+                attributionsCollapsible: true,
+                maxZoom: 28,
+                transition: tileTransition,
+            }),
+            name: 'Jawg_streets',
+            title: 'Jawg Streets',
+            type: 'base',
+        }));
         world.push(new ol.layer.Tile({
             source: new ol.source.XYZ({
                 url: "https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=HyIQ6A88uTDdX4n4MNVY",
@@ -212,42 +238,56 @@ function createBaseLayers() {
     }
 
     // testing ...
-    if (0) {
-        let english_map = new ol.layer.VectorTile({
-            declutter: true,
-            type: 'base',
-            name: 'english_map',
-            title: 'English Map',
-        });
-        // ol-mapbox-style plugin packed in with ol ... (kinda ugly)
-        //ol.applyStyle(english_map, "https://tiles.adsb.co/api/maps/basic/style.json");
-        world.push(english_map);
-    }
-
-    if (0) {
-        let vtlayer = new ol.layer.VectorTile({
-            source: new ol.source.VectorTile({
-                url: "http://test02.dev.adsbexchange.com/tiles/{z}/{x}/{y}.pbf",
-                format: new ol.format.MVT(),
-                maxZoom: 9,
+    if (1) {
+        world.push(new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=nRYox0R1ZyZ6XqSStq4S',
+                attributions: 'Map tiles by <a href="https://www.maptiler.com/">MapTiler</a>',
+                attributionsCollapsible: true,
+                maxZoom: 28,
                 transition: tileTransition,
             }),
-            name: 'vtlayer',
-            title: 'TEST VECTOR',
+            name: 'MapTiler_streets',
+            title: 'MapTiler Streets',
             type: 'base',
-            renderMode: 'image',
-        });
+        }));
+		
+        world.push(new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://tile.jawg.io/jawg-streets/{z}/{x}/{y}.png?access-token=qML7E6HmMKb6LQJgxHedkuht58y48dIpzawFGfCXdHzqnZWQlscx5zmyw7uYgTZG',
+                attributions: 'Map tiles by <a href="https://www.jawg.io/">Jawg Maps</a>',
+                attributionsCollapsible: true,
+                maxZoom: 28,
+                transition: tileTransition,
+            }),
+            name: 'Jawg_streets',
+            title: 'Jawg Streets',
+            type: 'base',
+        }));
 
-        jQuery.ajax({
-            url: 'osm-liberty/style.json',
-            dataType: 'json',
-            layer: vtlayer,
-            cache: false,
-        }).done(function(glStyle) {
-            ol.mbApplyStyle(this.layer, glStyle, 'openmaptiles');
-        });
+        world.push(new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+                attributions: 'Google Map',
+				subdomains:['mt0','mt1','mt2','mt3'],
+                attributionsCollapsible: false,
+                maxZoom: 28,
+                transition: tileTransition,
+            }),
+            name: 'Google_streets',
+            title: 'Gooogle Streets',
+            type: 'base',
+        }));		
+				
+		
+    }
 
-        world.push(vtlayer);
+
+
+
+
+    if (0) {
+		
     }
 
     world.push(new ol.layer.Tile({
