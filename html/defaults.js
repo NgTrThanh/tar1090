@@ -92,7 +92,7 @@ let lineWidth = 1.15;
 let OutlineADSBColor = '#000000';
 
 // Outline width for aircraft icons
-let outlineWidth = 0.90;
+let outlineWidth = 0.10;
 
 // constant html color for markers / tracks
 let monochromeMarkers = null;
